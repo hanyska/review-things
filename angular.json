@@ -123,6 +123,14 @@
           }
         }
       }
-    }},
-  "defaultProject": "review-things"
+    }
+  },
+  "defaultProject": "review-things",
+  "schematics": {
+    "@schematics/angular": {
+      "component": {
+        "spec": false
+      }
+    }
+  }
 }
