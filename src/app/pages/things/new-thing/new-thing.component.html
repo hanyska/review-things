@@ -1,0 +1,24 @@
+<!--suppress ALL -->
+<nb-card>
+  <nb-card-header>Add new thing</nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="newThingForm">
+      <div class="form-control-group">
+        <label class="label" for="name">Name:</label>
+        <input type="text"
+               nbInput
+               fullWidth
+               formControlName="name"
+               fieldSize="medium"
+               id="name"
+               placeholder="Piwa"
+               aria-label="Name"
+               required>
+      </div>
+    </form>
+  </nb-card-body>
+  <nb-card-footer align="end">
+    <button nbButton size="small" (click)="onClose()">Close</button>
+    <button nbButton size="small" status="primary" (click)="onSubmit()" [disabled]="newThingForm.invalid">Add</button>
+  </nb-card-footer>
+</nb-card>

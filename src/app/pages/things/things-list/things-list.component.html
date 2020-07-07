@@ -1,5 +1,11 @@
-<ul>
-  <li *ngFor="let thing of things">
-    {{thing | json}}
-  </li>
-</ul>
+<nb-card size="medium">
+  <nb-card-header class="d-flex justify-content-between">
+    <span class="my-auto">My things</span>
+    <button nbButton status="info" (click)="onAddNewThing()">Add thing</button>
+  </nb-card-header>
+  <nb-list>
+    <nb-list-item *ngFor="let thing of things">
+      {{ thing.name }}
+    </nb-list-item>
+  </nb-list>
+</nb-card>
