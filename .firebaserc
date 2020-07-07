@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "review-things": {
+      "hosting": {
+        "review-things": [
+          "review-things"
+        ]
+      }
+    }
+  }
+}
