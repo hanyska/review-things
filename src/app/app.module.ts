@@ -6,6 +6,10 @@ import {environment} from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {ThingsModule} from './pages/things/things.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NbDialogModule, NbThemeModule} from '@nebular/theme';
+import { AppRoutingModule } from './app-routing.module';
+import {NebularModule} from './shared/nebular/nebular.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +20,11 @@ import {ThingsModule} from './pages/things/things.module';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     ThingsModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    NbThemeModule.forRoot({ name: 'corporate' }),
+    NbDialogModule.forRoot(),
+    NebularModule
   ],
   providers: [],
   bootstrap: [AppComponent]
