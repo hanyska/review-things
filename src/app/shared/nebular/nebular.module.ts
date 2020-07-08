@@ -1,6 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {NbButtonModule, NbCardModule, NbDialogModule, NbInputModule, NbLayoutModule, NbListModule} from '@nebular/theme';
+import {
+  NbAlertModule,
+  NbButtonModule,
+  NbCardModule,
+  NbCheckboxModule,
+  NbDialogModule,
+  NbInputModule,
+  NbLayoutModule,
+  NbListModule
+} from '@nebular/theme';
 import {NbEvaIconsModule} from '@nebular/eva-icons';
 
 @NgModule({
@@ -16,6 +25,8 @@ import {NbEvaIconsModule} from '@nebular/eva-icons';
     NbInputModule,
     NbDialogModule,
     NbListModule,
+    NbAlertModule,
+    NbCheckboxModule
   ]
 })
 export class NebularModule { }
