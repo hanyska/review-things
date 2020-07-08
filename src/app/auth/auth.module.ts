@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import {NebularModule} from '../shared/nebular/nebular.module';
 import {RouterModule, Routes} from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
+import {TranslateModule} from '@ngx-translate/core';
 
 const authRoutes: Routes = [
   {
@@ -18,7 +19,8 @@ const authRoutes: Routes = [
     CommonModule,
     RouterModule.forChild(authRoutes),
     NebularModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule
   ]
 })
 export class AuthModule { }
