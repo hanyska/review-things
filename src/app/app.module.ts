@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NbDialogModule, NbThemeModule} from '@nebular/theme';
 import { AppRoutingModule } from './app-routing.module';
 import {NebularModule} from './shared/nebular/nebular.module';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 export function createTranslateLoader(http: HttpClient) {
@@ -24,6 +24,7 @@ export function createTranslateLoader(http: HttpClient) {
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     TranslateModule.forRoot({
       loader: {
