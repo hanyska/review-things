@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'rt-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  template: `
+    <p>
+      <span class="pr-1">{{'footer.createdWith' | translate}}</span>
+      <nb-icon icon="heart" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+      <span class="px-1">{{'footer.by' | translate}}</span>
+      <span>Anna Janusz</span>
+    </p>
+  `
 })
-export class FooterComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class FooterComponent {}

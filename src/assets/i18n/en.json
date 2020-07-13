@@ -1,3 +1,7 @@
 {
+  "footer": {
+    "createdWith": "Stworzono z",
+    "by": "przez"
+  },
   "signIn": "Sign in"
 }

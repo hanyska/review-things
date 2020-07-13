@@ -1,3 +1,7 @@
 {
+  "footer": {
+    "createdWith": "Created with",
+    "by": "by"
+  },
   "signIn": "Zaloguj się"
 }
