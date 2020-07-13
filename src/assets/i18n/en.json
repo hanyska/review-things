@@ -4,8 +4,15 @@
     "logout": "Logout"
   },
   "footer": {
-    "createdWith": "Stworzono z",
-    "by": "przez"
+    "createdWith": "Created with",
+    "by": "by"
   },
-  "signIn": "Sign in"
+  "signIn": "Sign in",
+  "register": "Register",
+  "formField": {
+    "email": "Email",
+    "password": "Password"
+  },
+  "error.http.auth/too-many-requests": "Too many request!",
+  "error.http.auth/wrong-password": "Wrong password!"
 }

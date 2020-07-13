@@ -1,0 +1,31 @@
+<div class="col-sm-12 col-md-6 mx-auto">
+  <nb-card>
+    <nb-card-body>
+      <h1 id="title" class="title">{{'register' | translate}}</h1>
+      <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+        <div class="form-control-group">
+          <label class="label colon-suffix" for="email">{{'formField.email' | translate}}</label>
+          <input nbInput
+                 fullWidth
+                 formControlName="email"
+                 name="email"
+                 id="email"
+                 placeholder="{{'formField.email' | translate}}"
+                 autofocus>
+        </div>
+        <div class="form-control-group">
+          <label class="label colon-suffix" for="password">{{'formField.password' | translate}}</label>
+          <input nbInput
+                 fullWidth
+                 formControlName="password"
+                 name="password"
+                 type="password"
+                 id="password"
+                 placeholder="{{'formField.password' | translate}}">
+        </div>
+
+        <button type="submit" nbButton fullWidth status="primary">{{'register' | translate}}</button>
+      </form>
+    </nb-card-body>
+  </nb-card>
+</div>

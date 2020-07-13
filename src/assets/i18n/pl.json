@@ -4,8 +4,15 @@
     "logout": "Wyloguj"
   },
   "footer": {
-    "createdWith": "Created with",
-    "by": "by"
+    "createdWith": "Stworzono z",
+    "by": "przez"
   },
-  "signIn": "Zaloguj się"
+  "signIn": "Zaloguj się",
+  "register": "Zarejestruj się",
+  "formField": {
+    "email": "Email",
+    "password": "Hasło"
+  },
+  "error.http.auth/too-many-requests": "Za dużo zapytań!",
+  "error.http.auth/wrong-password": "Złe hasło!"
 }

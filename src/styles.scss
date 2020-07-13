@@ -11,3 +11,11 @@
 nb-layout-footer nav {
   padding: 0.5rem !important;
 }
+
+.colon-suffix:after {
+  content: ":";
+}
+
+.form-control-group {
+  margin-bottom: 2rem;
+}
