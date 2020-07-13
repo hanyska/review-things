@@ -13,6 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
 import {NebularModule} from './shared/nebular/nebular.module';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {CommonModule} from '@angular/common';
+import {CoreModule} from './core/core.module';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -24,8 +26,12 @@ export function createTranslateLoader(http: HttpClient) {
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
     HttpClientModule,
+    CommonModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -33,12 +39,10 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    AngularFireDatabaseModule,
-    ThingsModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
     NbThemeModule.forRoot({ name: 'corporate' }),
     NbDialogModule.forRoot(),
+    ThingsModule,
+    CoreModule,
     NebularModule
   ],
   providers: [],

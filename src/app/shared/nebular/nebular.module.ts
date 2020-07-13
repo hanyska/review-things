@@ -5,7 +5,7 @@ import {
   NbButtonModule,
   NbCardModule,
   NbCheckboxModule,
-  NbDialogModule,
+  NbDialogModule, NbIconModule,
   NbInputModule,
   NbLayoutModule,
   NbListModule
@@ -26,7 +26,8 @@ import {NbEvaIconsModule} from '@nebular/eva-icons';
     NbDialogModule,
     NbListModule,
     NbAlertModule,
-    NbCheckboxModule
+    NbCheckboxModule,
+    NbIconModule
   ]
 })
 export class NebularModule { }
