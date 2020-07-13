@@ -1,4 +1,8 @@
 {
+  "appName": "Review things",
+  "header": {
+    "logout": "Logout"
+  },
   "footer": {
     "createdWith": "Stworzono z",
     "by": "przez"

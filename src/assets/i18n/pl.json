@@ -1,4 +1,8 @@
 {
+  "appName": "Review things",
+  "header": {
+    "logout": "Wyloguj"
+  },
   "footer": {
     "createdWith": "Created with",
     "by": "by"

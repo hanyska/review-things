@@ -4,7 +4,9 @@ import { Component } from '@angular/core';
   selector: 'rt-app-layout',
   template: `
     <nb-layout>
-      <nb-layout-header>Awesome Company</nb-layout-header>
+      <nb-layout-header>
+        <rt-header class="w-100"></rt-header>
+      </nb-layout-header>
       <nb-layout-column class="colored-column-basic">
         <router-outlet></router-outlet>
       </nb-layout-column>

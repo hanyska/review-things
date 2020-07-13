@@ -6,6 +6,7 @@ import { FooterComponent } from './footer/footer.component';
 import {SharedModule} from '../shared/shared.module';
 import {EmptyLayoutComponent} from './empty-layout.component';
 import {TranslateModule} from '@ngx-translate/core';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {TranslateModule} from '@ngx-translate/core';
   declarations: [
     EmptyLayoutComponent,
     MainLayoutComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent
   ]
 })
 export class CoreModule { }
