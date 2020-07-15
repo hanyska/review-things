@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {AuthService} from '../../auth/auth.service';
 
 @Component({
   selector: 'rt-header',
@@ -11,16 +12,17 @@ import { Component, OnInit } from '@angular/core';
       </div>
       <div>
         <button nbButton hero status="primary" [routerLink]="['/auth/login']">Login</button>
-        <button nbButton hero status="danger">{{'header.logout' | translate}}</button>
+        <button nbButton hero status="danger" (click)="onLogout()">{{'header.logout' | translate}}</button>
       </div>
     </nav>
   `
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
-  ngOnInit(): void {
+  onLogout() {
+    this.authService.logout();
   }
 
 }

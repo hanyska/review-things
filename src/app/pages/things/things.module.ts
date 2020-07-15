@@ -9,7 +9,7 @@ import {SharedModule} from '../../shared/shared.module';
 
 const thingsRoutes: Route[] = [
   {
-    path: '',
+    path: 'list',
     component: ThingsListComponent
   }
 ];
