@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {MainLayoutComponent} from './core/main-layout.component';
 import {EmptyLayoutComponent} from './core/empty-layout.component';
+import {AuthGuard} from './auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -11,7 +12,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'auth/login',
+        redirectTo: 'auth',
         pathMatch: 'full'
       },
       {
@@ -26,15 +27,21 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'things/list',
+        redirectTo: 'things',
         pathMatch: 'full'
       },
       {
         path: 'things',
+        canActivate: [AuthGuard],
         loadChildren: () => import('./pages/things/things.module').then(m => m.ThingsModule)
       }
     ]
   },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
 
 ];
 

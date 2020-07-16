@@ -9,6 +9,11 @@ import {SharedModule} from '../../shared/shared.module';
 
 const thingsRoutes: Route[] = [
   {
+    path: '',
+    redirectTo: 'list',
+    pathMatch: 'full'
+  },
+  {
     path: 'list',
     component: ThingsListComponent
   }
