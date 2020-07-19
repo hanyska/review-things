@@ -5,7 +5,7 @@
   </nb-card-header>
   <nb-list>
     <nb-list-item *ngFor="let thing of things">
-      {{ thing.name }}
+      <button nbButton status="basic" [routerLink]="['/things/list', thing.id]">{{ thing.name }}</button>
     </nb-list-item>
   </nb-list>
 </nb-card>

@@ -6,6 +6,7 @@ import { NewThingComponent } from './new-thing/new-thing.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {Route, RouterModule} from '@angular/router';
 import {SharedModule} from '../../shared/shared.module';
+import { ThingComponent } from './thing/thing.component';
 
 const thingsRoutes: Route[] = [
   {
@@ -16,13 +17,18 @@ const thingsRoutes: Route[] = [
   {
     path: 'list',
     component: ThingsListComponent
+  },
+  {
+    path: 'list/:id',
+    component: ThingComponent
   }
 ];
 
 @NgModule({
   declarations: [
     ThingsListComponent,
-    NewThingComponent
+    NewThingComponent,
+    ThingComponent
   ],
   exports: [
     ThingsListComponent

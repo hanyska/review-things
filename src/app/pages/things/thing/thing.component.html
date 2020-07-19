@@ -1,0 +1,23 @@
+<nb-card size="medium">
+  <nb-card-header class="d-flex justify-content-between">
+    <span class="my-auto">{{thing?.name}}</span>
+    <span class="my-auto">{{thing?.address}}</span>
+    <span>{{thing?.date?.seconds * 1000 | date: 'dd-MM-yyyy'}}</span>
+  </nb-card-header>
+  <nb-card-body>
+    <nb-card *ngFor="let item of thing?.items" size="tiny" accent="info">
+      <nb-card-header>Tiny card</nb-card-header>
+      <nb-card-body>
+        <div>
+          <span>{{item?.date?.seconds * 1000 | date: 'dd-MM-yyyy'}}</span>
+          <span>{{item?.photo}}</span>
+          <span>{{item?.description}}</span>
+          <span>{{item?.rate}}</span>
+          <span>{{item?.price}}</span>
+        </div>
+      </nb-card-body>
+      <nb-card-footer>By Wikipedia</nb-card-footer>
+    </nb-card>
+
+  </nb-card-body>
+</nb-card>

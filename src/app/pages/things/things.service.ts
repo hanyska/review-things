@@ -20,7 +20,11 @@ export class ThingsService {
             return data;
           });
         })
-    );
+      );
+  }
+
+  getThing(id: string) {
+    return this.firebase.doc<IThing>('things/' + id).valueChanges();
   }
 
   addThing(thing: IThing) {

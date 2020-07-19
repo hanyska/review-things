@@ -1,11 +1,11 @@
-import {Item} from './Item';
+import {IItem} from './Item';
 
 export interface IThing {
   date?: Date;
   name?: string;
   address?: string;
   photo?: string;
-  items?: Item[];
+  items?: IItem[];
 }
 
 export class Thing implements IThing {
@@ -13,6 +13,6 @@ export class Thing implements IThing {
               public name: string,
               public address: string,
               public photo: string,
-              public items: Item[]) {
+              public items: IItem[]) {
   }
 }
