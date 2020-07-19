@@ -13,6 +13,7 @@
     "email": "Email",
     "password": "Hasło"
   },
+  "error.http.auth/user-not-found" : "Zły email bądź hasło!",
   "error.http.auth/too-many-requests": "Za dużo zapytań!",
-  "error.http.auth/wrong-password": "Złe hasło!"
+  "error.http.auth/wrong-password": "Zły email bądź hasło!"
 }

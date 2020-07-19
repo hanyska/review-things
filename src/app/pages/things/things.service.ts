@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {map} from 'rxjs/operators';
+import {IThing} from '../../models/Thing';
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +23,8 @@ export class ThingsService {
     );
   }
 
-  addThing(things: any) {
-    return this.firebase.collection('things').add(things);
+  addThing(thing: IThing) {
+    return this.firebase.collection('things').doc(thing.name.replace(' ', '_')).set(thing);
   }
 
   updateThing(things: any) {

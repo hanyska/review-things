@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NbDialogRef} from '@nebular/theme';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ThingsService} from '../things.service';
+import {IThing} from '../../../models/Thing';
 
 @Component({
   selector: 'rt-new-thing',
@@ -26,7 +27,7 @@ export class NewThingComponent implements OnInit {
   }
 
   onSubmit() {
-    const newThing = {
+    const newThing: IThing = {
       date: new Date(),
       name: this.newThingForm.get('name').value
     };
