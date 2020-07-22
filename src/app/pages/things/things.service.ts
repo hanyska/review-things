@@ -2,15 +2,22 @@ import { Injectable } from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {map} from 'rxjs/operators';
 import {IThing} from '../../models/Thing';
+import {IItem} from '../../models/Item';
+import {AuthService} from '../../auth/auth.service';
+import {firestore} from 'firebase';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThingsService {
-  constructor(private firebase: AngularFirestore) { }
+  constructor(private firebase: AngularFirestore,
+              private authService: AuthService) { }
 
   getThings() {
-    return this.firebase.collection('things')
+    const thingsCollection = this.firebase.collection('things', ref => {
+      return ref.where('userId', '==', this.authService.userUid);
+    });
+    return thingsCollection
       .snapshotChanges()
       .pipe(
         map((doc: any) => {
@@ -24,11 +31,16 @@ export class ThingsService {
   }
 
   getThing(id: string) {
-    return this.firebase.doc<IThing>('things/' + id).valueChanges();
+    return this.firebase.collection('things').doc(id).valueChanges();
   }
 
   addThing(thing: IThing) {
-    return this.firebase.collection('things').doc(thing.name.replace(' ', '_')).set(thing);
+    const t = {
+      ...thing,
+      userId: this.authService.userUid
+    };
+
+    return this.firebase.collection('things').doc(thing.name.replace(' ', '_')).set(t);
   }
 
   updateThing(things: any) {
@@ -38,5 +50,11 @@ export class ThingsService {
 
   deleteThing(id: number) {
     return this.firebase.doc(`things/${id}`).delete();
+  }
+
+  addItem(thing, item: IItem) {
+    return this.firebase.collection('things').doc(thing).update({
+      items: firestore.FieldValue.arrayUnion(item)
+    });
   }
 }

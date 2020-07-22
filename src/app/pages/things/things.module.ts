@@ -7,6 +7,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {Route, RouterModule} from '@angular/router';
 import {SharedModule} from '../../shared/shared.module';
 import { ThingComponent } from './thing/thing.component';
+import { NewItemComponent } from './thing/new-item/new-item.component';
 
 const thingsRoutes: Route[] = [
   {
@@ -28,7 +29,8 @@ const thingsRoutes: Route[] = [
   declarations: [
     ThingsListComponent,
     NewThingComponent,
-    ThingComponent
+    ThingComponent,
+    NewItemComponent
   ],
   exports: [
     ThingsListComponent
