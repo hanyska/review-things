@@ -7,37 +7,43 @@
 
       <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
         <div class="form-control-group">
-          <label class="label" for="email">Email address:</label>
+          <label class="label colon-suffix" for="email">{{'formField.email' | translate}}</label>
           <input nbInput
                  fullWidth
                  formControlName="email"
                  name="email"
                  id="email"
-                 placeholder="Email address"
+                 placeholder="{{'formField.email' | translate}}"
                  autofocus>
         </div>
         <div class="form-control-group">
-          <label class="label" for="password">Password:</label>
+          <label class="label colon-suffix" for="password">{{'formField.password' | translate}}</label>
           <input nbInput
                  fullWidth
                  formControlName="password"
                  name="password"
                  type="password"
                  id="password"
-                 placeholder="Password">
+                 placeholder="{{'formField.password' | translate}}">
         </div>
 
-        <div class="form-control-group accept-group">
-          <nb-checkbox formControlName="rememberMe">Remember me</nb-checkbox>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-control-group accept-group">
+              <nb-checkbox formControlName="rememberMe">{{'rememberMe' | translate}}</nb-checkbox>
+            </div>
+          </div>
+          <div class="col-sm-6 text-right">
+            <a class="text-primary font-weight-bold cursor-pointer" (click)="onForgotPassword()">{{'forgotPassword' | translate}}</a>
+          </div>
         </div>
 
-        <button type="submit"
-                nbButton
-                fullWidth
-                status="primary">
-          Sign In
-        </button>
+        <button type="submit" nbButton fullWidth status="primary">{{'signIn' | translate}}</button>
       </form>
     </nb-card-body>
+    <nb-card-footer class="text-center">
+      <span class="pr-1">{{'dontHaveAnAccount' | translate}}</span>
+      <a class="text-primary font-weight-bold" [routerLink]="['../register']">{{'register' | translate}}</a>
+    </nb-card-footer>
   </nb-card>
 </div>

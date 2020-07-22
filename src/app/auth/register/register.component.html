@@ -24,8 +24,24 @@
                  placeholder="{{'formField.password' | translate}}">
         </div>
 
+
+        <div class="form-control-group">
+          <label class="label colon-suffix" for="repeatPassword">{{'formField.repeatPassword' | translate}}</label>
+          <input nbInput
+                 fullWidth
+                 formControlName="repeatPassword"
+                 name="repeatPassword"
+                 type="password"
+                 id="repeatPassword"
+                 placeholder="{{'formField.repeatPassword' | translate}}">
+        </div>
+
         <button type="submit" nbButton fullWidth status="primary">{{'register' | translate}}</button>
       </form>
     </nb-card-body>
+    <nb-card-footer class="text-center">
+      <span class="pr-1">{{'haveAnAccount' | translate}}</span>
+      <a class="text-primary font-weight-bold" [routerLink]="['../login']">{{'signIn' | translate}}</a>
+    </nb-card-footer>
   </nb-card>
 </div>

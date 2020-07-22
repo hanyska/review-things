@@ -9,9 +9,15 @@
   },
   "signIn": "Sign in",
   "register": "Register",
+  "haveAnAccount": "You have an account?",
+  "dontHaveAnAccount": "Don't have an account?",
+  "forgotPassword": "Forgot password",
+  "rememberMe": "Remember me",
+  "remind": "Remind",
   "formField": {
     "email": "Email",
-    "password": "Password"
+    "password": "Password",
+    "repeatPassword": "Repeat password"
   },
   "error.http.auth/user-not-found": "Wrong email or password!",
   "error.http.auth/too-many-requests": "Too many request!",

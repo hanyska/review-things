@@ -9,9 +9,15 @@
   },
   "signIn": "Zaloguj się",
   "register": "Zarejestruj się",
+  "haveAnAccount": "Masz już konto?",
+  "dontHaveAnAccount": "Nie masz jeszcze konta?",
+  "forgotPassword": "Zapomniałem hasła",
+  "rememberMe": "Zapamiętaj mnie",
+  "remindMe": "Przypomnij",
   "formField": {
     "email": "Email",
-    "password": "Hasło"
+    "password": "Hasło",
+    "repeatPassword": "Powtórz hasło"
   },
   "error.http.auth/user-not-found" : "Zły email bądź hasło!",
   "error.http.auth/too-many-requests": "Za dużo zapytań!",

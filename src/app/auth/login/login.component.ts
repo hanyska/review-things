@@ -3,6 +3,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../auth.service';
 import {FirebaseHttpError} from '../../models/FirebaseHttpError';
 import {Router} from '@angular/router';
+import {NbDialogService} from '@nebular/theme';
+import {ForgotPasswordComponent} from '../forgot-password/forgot-password.component';
 
 @Component({
   selector: 'rt-login',
@@ -18,7 +20,8 @@ export class LoginComponent implements OnInit {
   });
 
   constructor(private authService: AuthService,
-              private router: Router) { }
+              private router: Router,
+              private dialog: NbDialogService) { }
 
   ngOnInit(): void {
   }
@@ -35,6 +38,13 @@ export class LoginComponent implements OnInit {
       .catch(err => {
         this.error = err;
       });
+  }
+
+  onForgotPassword() {
+    const forgotPasswordModal = this.dialog.open(ForgotPasswordComponent);
+    forgotPasswordModal.onClose.subscribe(data => {
+      console.log(data);
+    });
   }
 
 }
