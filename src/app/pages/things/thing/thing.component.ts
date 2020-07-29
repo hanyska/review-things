@@ -12,6 +12,7 @@ import {NewItemComponent} from './new-item/new-item.component';
 })
 export class ThingComponent implements OnInit {
   thing: IThing;
+  COLOR_CARD = ['primary', 'success', 'info', 'warning', 'danger'];
 
   constructor(private route: ActivatedRoute,
               private thingsService: ThingsService,
@@ -28,6 +29,11 @@ export class ThingComponent implements OnInit {
       console.log(data);
       this.thing = data;
     });
+  }
+
+  get getRandomColorCard() {
+    const randomIndex = Math.floor(Math.random() * this.COLOR_CARD.length);
+    return this.COLOR_CARD[randomIndex];
   }
 
   onAddNewItem() {

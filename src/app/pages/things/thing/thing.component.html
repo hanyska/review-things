@@ -1,24 +1,67 @@
-<nb-card size="medium">
-  <nb-card-header class="d-flex justify-content-between">
-    <span class="my-auto">{{thing?.name}}</span>
-    <span class="my-auto">{{thing?.address}}</span>
-    <span>{{thing?.date?.seconds * 1000 | date: 'dd-MM-yyyy'}}</span>
-    <button nbButton status="info" (click)="onAddNewItem()">Add item</button>
-  </nb-card-header>
-  <nb-card-body>
-    <nb-card *ngFor="let item of thing?.items" size="tiny" accent="info">
-      <nb-card-header>Tiny card</nb-card-header>
-      <nb-card-body>
-        <div>
-          <span>{{item?.date?.seconds * 1000 | date: 'dd-MM-yyyy'}}</span>
-          <span>{{item?.photo}}</span>
-          <span>{{item?.description}}</span>
-          <span>{{item?.rate}}</span>
-          <span>{{item?.price}}</span>
-        </div>
-      </nb-card-body>
-      <nb-card-footer>By Wikipedia</nb-card-footer>
-    </nb-card>
+<!--<nb-card size="medium">-->
+<!--  <nb-card-header class="d-flex justify-content-between">-->
+<!--    <span class="my-auto">{{thing?.name}}</span>-->
+<!--    <span class="my-auto">{{thing?.address}}</span>-->
+<!--    <span>{{thing?.date?.seconds * 1000 | date: 'dd-MM-yyyy'}}</span>-->
+<!--    <button nbButton status="info" (click)="onAddNewItem()">Add item</button>-->
+<!--  </nb-card-header>-->
+<!--  <nb-card-body>-->
+<!--    <nb-card *ngFor="let item of thing?.items" size="tiny" accent="info">-->
+<!--      <nb-card-header>Tiny card</nb-card-header>-->
+<!--      <nb-card-body>-->
+<!--        <div>-->
+<!--          <span>{{item?.date?.seconds * 1000 | date: 'dd-MM-yyyy'}}</span>-->
+<!--          <span>{{item?.photo}}</span>-->
+<!--          <span>{{item?.description}}</span>-->
+<!--          <span>{{item?.rate}}</span>-->
+<!--          <span>{{item?.price}}</span>-->
+<!--        </div>-->
+<!--      </nb-card-body>-->
+<!--      <nb-card-footer>By Wikipedia</nb-card-footer>-->
+<!--    </nb-card>-->
 
-  </nb-card-body>
-</nb-card>
+<!--  </nb-card-body>-->
+<!--</nb-card>-->
+
+<div class="row">
+  <div class="col-sm-4" *ngFor="let item of thing?.items">
+    <nb-flip-card>
+      <nb-card-front>
+        <nb-card size="medium" status="success">
+          <nb-card-header>{{item.name}}</nb-card-header>
+          <nb-card-body>
+            <img class="img-fluid"
+                 src="https://image.ceneostatic.pl/data/products/69090004/i-warka-radler-piwo-z-lemoniada-o-smaku-czarnej-porzeczki-i-limonki-500-ml.jpg"
+                 [alt]="item.name">
+          </nb-card-body>
+        </nb-card>
+      </nb-card-front>
+      <nb-card-back>
+        <nb-card size="medium" status="danger">
+          <nb-card-header>{{item.name}}</nb-card-header>
+          <nb-card-body>
+            <div>
+              <span>Date:</span>
+              {{item?.date?.seconds * 1000 | date: 'dd-MM-yyyy'}}
+            </div>
+            <div>
+              <span>Description: </span>
+              <span>{{item?.description}}</span>
+            </div>
+            <div>
+              <span>Rate: </span>
+              <span>{{item?.rate}}</span>
+            </div>
+            <div>
+              <span>Price: </span>
+              <span>{{item?.price}}</span>
+            </div>
+          </nb-card-body>
+        </nb-card>
+      </nb-card-back>
+    </nb-flip-card>
+  </div>
+</div>
+
+
+

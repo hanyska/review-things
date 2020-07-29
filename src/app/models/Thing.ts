@@ -1,9 +1,7 @@
 import {IItem} from './Item';
 
 export interface IThing {
-  date?: {
-    seconds: string;
-  };
+  date?: Date;
   name?: string;
   address?: string;
   photo?: string;
@@ -11,7 +9,7 @@ export interface IThing {
 }
 
 export class Thing implements IThing {
-  constructor(public date?: {seconds: string},
+  constructor(public date?: Date,
               public name?: string,
               public address?: string,
               public photo?: string,
